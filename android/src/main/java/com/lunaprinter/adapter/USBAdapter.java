@@ -1,4 +1,4 @@
-package com.lunaprinter.adapter;
+package com.lunaprinter.USBAdapter;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
