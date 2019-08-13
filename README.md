@@ -2,7 +2,7 @@
 
 ## Getting started
 
-`$ npm install react-native-luna-printer --save`
+`$ npm install github:copas12/react-native-luna-printer --save`
 
 ### Mostly automatic installation
 
