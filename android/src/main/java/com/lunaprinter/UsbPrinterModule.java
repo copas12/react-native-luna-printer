@@ -14,12 +14,12 @@ import com.facebook.react.bridge.WritableMap;
 import com.lunaprinter.adapter.USBAdapter;
 import java.util.List;
 
-public class LunaPrinterModule extends ReactContextBaseJavaModule {
+public class UsbPrinterModule extends ReactContextBaseJavaModule {
     private USBAdapter usbAdapter;
 
     private final ReactApplicationContext reactContext;
 
-    public LunaPrinterModule(ReactApplicationContext reactContext) {
+    public UsbPrinterModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
         this.usbAdapter = USBAdapter.getInstance();

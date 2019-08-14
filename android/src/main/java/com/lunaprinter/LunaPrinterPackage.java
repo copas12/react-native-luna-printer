@@ -13,7 +13,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class LunaPrinterPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new LunaPrinterModule(reactContext));
+        return Arrays.<NativeModule>asList(new UsbPrinterModule(reactContext));
     }
 
     @Override
