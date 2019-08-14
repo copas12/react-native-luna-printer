@@ -1,36 +1,63 @@
 {
-  "name": "react-native-luna-printer",
-  "title": "React Native Luna Printer",
-  "version": "1.0.0",
+  "_from": "github:copas12/react-native-luna-printer",
+  "_id": "react-native-luna-printer@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-O0/jkueY1C86n5/AdsOcNQpnZwY=",
+  "_location": "/react-native-luna-printer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "react-native-luna-printer@github:copas12/react-native-luna-printer",
+    "name": "react-native-luna-printer",
+    "escapedName": "react-native-luna-printer",
+    "rawSpec": "github:copas12/react-native-luna-printer",
+    "saveSpec": "github:copas12/react-native-luna-printer",
+    "fetchSpec": null,
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:copas12/react-native-luna-printer#6381aafcb3629edb920cc31c10cd0253d009d4fa",
+  "_spec": "react-native-luna-printer@github:copas12/react-native-luna-printer",
+  "_where": "/Users/user/Luna/custom_modules/TES",
+  "author": {
+    "name": "Your Name",
+    "email": "yourname@email.com"
+  },
+  "bugs": {
+    "url": "https://github.com/github_account/react-native-luna-printer/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "escpos-printer-toolkit": "^1.0.8"
+  },
+  "deprecated": false,
   "description": "TODO",
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-native": "^0.59.4"
+  },
+  "homepage": "https://github.com/github_account/react-native-luna-printer#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "react-native-luna-printer",
+  "peerDependencies": {
+    "react": "^16.5.0",
+    "react-native": ">=0.57.0-rc.0 <1.0.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/github_account/react-native-luna-printer.git",
     "baseUrl": "https://github.com/github_account/react-native-luna-printer"
   },
-  "keywords": [
-    "react-native"
-  ],
-  "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
-  "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
-  "peerDependencies": {
-    "react": "^16.5.0",
-    "react-native": ">=0.57.0-rc.0 <1.0.x"
-  },
-  "devDependencies": {
-    "react": "^16.5.0",
-    "react-native": "^0.59.4"
-  },
-  "dependencies": {
-    "escpos-printer-toolkit": "^1.0.8"
-  }
+  "title": "React Native Luna Printer",
+  "version": "1.0.0"
 }

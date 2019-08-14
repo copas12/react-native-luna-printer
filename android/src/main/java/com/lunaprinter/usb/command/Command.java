@@ -1,4 +1,4 @@
-package com.lunaprinter.command;
+package com.lunaprinter.usb.command;
 
 public class Command {
 

@@ -1,4 +1,4 @@
-package com.lunaprinter;
+package com.lunaprinter.usb;
 
 import android.hardware.usb.UsbDevice;
 
@@ -11,7 +11,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
-import com.lunaprinter.adapter.USBAdapter;
+import com.lunaprinter.usb.adapter.USBAdapter;
 import java.util.List;
 
 public class UsbPrinterModule extends ReactContextBaseJavaModule {
@@ -28,7 +28,7 @@ public class UsbPrinterModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "LunaUSBPrinter";
+        return "LunaUsbPrinter";
     }
 
     @ReactMethod

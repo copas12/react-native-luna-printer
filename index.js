@@ -1,6 +1,6 @@
 import { NativeModules } from 'react-native';
 import EPToolkit from 'escpos-printer-toolkit';
-const { LunaUSBPrinter } = NativeModules;
+const { LunaUsbPrinter, BluetoothManager, LunaBTPrinter, LunaNetworkPrinter, } = NativeModules;
 const defaultOpt = {
   beep: false,
   cut: false,
@@ -9,17 +9,32 @@ const defaultOpt = {
 };
 
 const usbPrinter = {
-  getList: LunaUSBPrinter.usbPrinterList,
-  connect: LunaUSBPrinter.usbCloseConnection,
-  disconnect: LunaUSBPrinter.usbCloseConnection,
-  raw: LunaUSBPrinter.usbPrintRawData,
+  getList: LunaUsbPrinter.usbPrinterList,
+  connect: LunaUsbPrinter.usbPrinterConnect,
+  disconnect: LunaUsbPrinter.usbCloseConnection,
+  printRaw: LunaUsbPrinter.usbPrintRawData,
   printText: async text => {
     const opt = defaultOpt;
     const buffer = EPToolkit.exchange_text(text, opt);
-    return await LunaUSBPrinter.usbPrintRawData(buffer.toString('base64'));
+    return await LunaUsbPrinter.usbPrintRawData(buffer.toString('base64'));
   },
   printPicture: async base64 => {
-    return await LunaUSBPrinter.usbPrintPicture(base64);
+    return await LunaUsbPrinter.usbPrintPicture(base64);
   }
 };
-export { usbPrinter };
+
+const netPrinter = {
+  printText: LunaNetworkPrinter.printText,
+  printRaw: LunaNetworkPrinter.printRaw,
+}
+
+const btPrinter = {
+  enable: BluetoothManager.enableBluetooth,
+  connect: BluetoothManager.connect,
+  printText: LunaBTPrinter.printText,
+  printPicture: LunaBTPrinter.printPic,
+  openCashDrawer: () => {
+    LunaBTPrinter.openCashDrawer(0, 25, 250);
+  }
+}
+export { usbPrinter, btPrinter, netPrinter };

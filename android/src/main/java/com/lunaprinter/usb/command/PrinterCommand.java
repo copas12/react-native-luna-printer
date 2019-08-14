@@ -1,4 +1,4 @@
-package com.lunaprinter.command;
+package com.lunaprinter.usb.command;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;

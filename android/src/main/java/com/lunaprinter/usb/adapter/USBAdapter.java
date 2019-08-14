@@ -1,4 +1,4 @@
-package com.lunaprinter.adapter;
+package com.lunaprinter.usb.adapter;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.lunaprinter.command.PrintPicture;
+import com.lunaprinter.usb.command.PrintPicture;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class USBAdapter {
     private UsbDeviceConnection mUsbDeviceConnection;
     private UsbInterface mUsbInterface;
     private UsbEndpoint mEndPoint;
-    private static final String ACTION_USB_PERMISSION = "com.lunaprinter.USBPrinter.USB_PERMISSION";
+    private static final String ACTION_USB_PERMISSION = "com.lunaprinter.usb.USBPrinter.USB_PERMISSION";
 
     public static final int WIDTH_58 = 384;
     private int deviceWidth = WIDTH_58;
