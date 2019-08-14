@@ -25,12 +25,13 @@ const usbPrinter = {
 
 const netPrinter = {
   printText: LunaNetworkPrinter.printText,
-  printRaw: LunaNetworkPrinter.printRaw,
+  print: LunaNetworkPrinter.print,
 }
 
 const btPrinter = {
   enable: BluetoothManager.enableBluetooth,
   connect: BluetoothManager.connect,
+  disconnect: BluetoothManager.disconnect,
   printText: LunaBTPrinter.printText,
   printPicture: LunaBTPrinter.printPic,
   openCashDrawer: () => {

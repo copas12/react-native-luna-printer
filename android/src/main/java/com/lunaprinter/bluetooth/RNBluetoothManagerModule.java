@@ -221,6 +221,17 @@ public class RNBluetoothManagerModule extends ReactContextBaseJavaModule
     }
 
     @ReactMethod
+    public void disconnect(final Promise promise) {
+        try {
+            mService.stop();
+            promise.resolve(true);
+        } catch (Exception e) {
+            //TODO: handle exception
+            promise.reject(e.getMessage());
+        }
+    }
+
+    @ReactMethod
     public void unpaire(String address,final Promise promise){
         BluetoothAdapter adapter = this.getBluetoothAdapter();
         if (adapter!=null && adapter.isEnabled()) {
