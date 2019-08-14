@@ -33,16 +33,19 @@ public class NetworkPrinterModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void printText(String text, Promise promise) {
+    public void printText(String text, Boolean openCD, Promise promise) {
         try {
             Socket sock = new Socket("172.16.0.87", 9100);
             PrintWriter oStream = new PrintWriter(sock.getOutputStream());
             oStream.println(text);
+            if (openCD) {
+                sock.getOutputStream().write(PrinterCommand.POS_Set_Cashbox(0, 25, 250));
+            }
             oStream.close();
             sock.close();
             promise.resolve(true);
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
             promise.resolve(e.getMessage());
         }
     }
@@ -54,13 +57,13 @@ public class NetworkPrinterModule extends ReactContextBaseJavaModule {
             PrintWriter oStream = new PrintWriter(sock.getOutputStream());
             oStream.write(buffer);
             if (openCD) {
-                oStream.write(PrinterCommand.POS_Set_Cashbox(0, 25, 250));
+                sock.getOutputStream().write(PrinterCommand.POS_Set_Cashbox(0, 25, 250));
             }
             oStream.close();
             sock.close();
             promise.resolve(true);
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
             promise.resolve(e.getMessage());
         }
     }
