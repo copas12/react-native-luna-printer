@@ -2,7 +2,7 @@
   "_from": "github:copas12/react-native-luna-printer",
   "_id": "react-native-luna-printer@1.0.0",
   "_inBundle": false,
-  "_integrity": "sha1-O0/jkueY1C86n5/AdsOcNQpnZwY=",
+  "_integrity": "sha1-zVV6z/2/7So4uGbMCltFdvGqkOw=",
   "_location": "/react-native-luna-printer",
   "_phantomChildren": {},
   "_requested": {
@@ -18,7 +18,7 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "github:copas12/react-native-luna-printer#6381aafcb3629edb920cc31c10cd0253d009d4fa",
+  "_resolved": "github:copas12/react-native-luna-printer#24e297d54ecdf33f3393041c12063758c672f8ea",
   "_spec": "react-native-luna-printer@github:copas12/react-native-luna-printer",
   "_where": "/Users/user/Luna/custom_modules/TES",
   "author": {
@@ -30,7 +30,8 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "escpos-printer-toolkit": "^1.0.8"
+    "escpos-printer-toolkit": "^1.0.8",
+    "p-queue": "^6.1.1"
   },
   "deprecated": false,
   "description": "TODO",

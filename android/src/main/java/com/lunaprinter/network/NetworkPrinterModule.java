@@ -83,7 +83,7 @@ public class NetworkPrinterModule extends ReactContextBaseJavaModule {
             if (openCD) {
                 outputStream.write(PrinterCommand.POS_Set_Cashbox(0, 25, 250));
             }
-            oStream.println("\n\n\n\n");
+            oStream.println("\n\n\n\f");
             outputStream.write(PrinterCommand.POS_Set_Cut(1));
             oStream.close();
             sock.close();

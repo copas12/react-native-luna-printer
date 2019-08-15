@@ -316,7 +316,7 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
     }
 
     @ReactMethod
-    public void printPic(String base64encodeStr, @Nullable  ReadableMap options) {
+    public void printPic(String base64encodeStr, @Nullable  ReadableMap options, Promise promise) {
         int width = 0;
         int leftPadding = 0;
         if(options!=null){
@@ -342,13 +342,16 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
              */
             byte[] data = PrintPicture.POS_PrintBMP(mBitmap, width, nMode, leftPadding);
             //	SendDataByte(buffer);
-            sendDataByte(Command.ESC_Init);
-            sendDataByte(Command.LF);
+            // sendDataByte(Command.ESC_Init);
+            // sendDataByte(Command.LF);
+            sendDataByte(PrinterCommand.POS_S_Align(1));
             sendDataByte(data);
             sendDataByte(PrinterCommand.POS_Set_PrtAndFeedPaper(30));
             sendDataByte(PrinterCommand.POS_Set_Cut(1));
             sendDataByte(PrinterCommand.POS_Set_PrtInit());
+            promise.resolve(true);
         }
+        promise.resolve(false);
     }
 
 
@@ -497,6 +500,30 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
         public String getStr() {
             return str;
         }
+    }
+
+    @ReactMethod 
+    private void picBase64(String base64encodeStr, @Nullable Integer optWidth, @Nullable Integer optLeft, Promise promise) {
+    
+        int width = (optWidth != null) ? optWidth : 0;
+        int leftPadding = (optLeft != null) ? optLeft : 0;
+
+        // cannot larger then devicesWith;
+        if (width > deviceWidth || width == 0) {
+            width = deviceWidth;
+        }
+
+        byte[] bytes = Base64.decode(base64encodeStr, Base64.DEFAULT);
+        Bitmap mBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        int nMode = 0;
+        if (mBitmap != null) {
+
+            byte[] data = PrintPicture.POS_PrintBMP(mBitmap, width, nMode, leftPadding);
+
+            sendDataByte(data);
+            promise.resolve(true);
+        }
+        promise.resolve(false);
     }
 
 }

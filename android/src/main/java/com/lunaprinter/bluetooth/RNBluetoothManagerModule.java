@@ -224,7 +224,7 @@ public class RNBluetoothManagerModule extends ReactContextBaseJavaModule
     public void disconnect(final Promise promise) {
         try {
             mService.stop();
-            promise.resolve(true);
+            promise.resolve(true);           
         } catch (Exception e) {
             //TODO: handle exception
             promise.reject(e.getMessage());
@@ -450,4 +450,6 @@ public class RNBluetoothManagerModule extends ReactContextBaseJavaModule
                 break;
         }
     }
+
+ 
 }

@@ -13,6 +13,7 @@ import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.lunaprinter.usb.adapter.USBAdapter;
 import java.util.List;
+import com.lunaprinter.usb.command.PrinterCommand;
 
 public class UsbPrinterModule extends ReactContextBaseJavaModule {
     private USBAdapter usbAdapter;
@@ -58,6 +59,12 @@ public class UsbPrinterModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void usbPrintRawData(String base64Data, Promise promise) {
         boolean result = usbAdapter.printRawData(base64Data);
+        promise.resolve(result);
+    }
+
+    @ReactMethod
+    public void openCashDrawer(Promise promise) {
+        boolean result = usbAdapter.printRawData(PrinterCommand.POS_Set_Cashbox(0, 25, 250));
         promise.resolve(result);
     }
 
