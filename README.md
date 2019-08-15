@@ -36,8 +36,24 @@
 
 ## Usage
 ```javascript
-import LunaPrinter from 'react-native-luna-printer';
+import { usbPrinter, btPrinter, netPrinter } from 'react-native-luna-printer';
 
-// TODO: What to do with the module?
-LunaPrinter;
+** USB
+// Get List 
+usbPrinter.getList().then(devices => console.log(devices))
+
+// Print
+usbPrinter.print(vendorId: string, productId string, lines: string[], base64Image?: string, openCashDrawer: boolean = false) 
+
+** Bluetooth
+// Get List
+btPrinter.enable().then(devices => console.log(devices))
+
+// Print
+btPrinter.print(macAddress: string, lines: string[], base64Image?: string, openCashDrawer: boolean = false)
+
+** Network
+// Print
+netPrinter.print(ip: string,port: number,lines: string[], base64logo: string, openCashDrawer: boolean = false)
+
 ```
